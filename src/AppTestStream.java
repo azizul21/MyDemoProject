@@ -53,6 +53,8 @@ public class AppTestStream {
 		int maximum = list.stream().max((i1,i2)-> i1.compareTo(i2)).get();
 		System.out.println("Minimum value :"+minimum);
 		System.out.println("Maximum value :"+maximum);
+		//second highest number
+		
 		
 		//forEach Method
 		System.out.println("For Each method");

@@ -1,8 +1,11 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.LongSummaryStatistics;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Problems {
 	public static void main(String args[]) {
@@ -118,6 +121,22 @@ public class Problems {
 		System.out.println("Nearest Palindrome number is::"+funcPalimdrom.apply(numPalindrom));		
 		
 		
+		String charac = "ABCDEFGHIJabcdekhde";
+		char[] charsArr = charac.toUpperCase().toCharArray();
+		//Map<Character,Integer> finalMap = Stream.of(charsArr).collect(Collectors.groupingBy(e))
+		//Map<Object, Long> finalMap1  = Stream.of(charsArr).collect(Collectors.groupingBy(ch -> ch,Collectors.counting()));
+		Map<Character, Integer> finalMap = new HashMap<>();
+		 for(int i=0; i<charsArr.length;i++) { 
+			 int value = finalMap.get(charsArr[i]) == null? 0 : finalMap.get(charsArr[i]);
+		  
+		  finalMap.put(charsArr[i], value + 1);
+		  
+		  }
+		 
+		System.out.println("Fianl Data::"+finalMap); 
+		/*
+		 * finalMap1.forEach( (o,l) -> System.out.println("Character::" +(Character)o
+		 * +":"+l ));
+		 */
 	}
-
 }
